@@ -1,6 +1,7 @@
 
 import math
 import random
+import time
 
 PlayerDeckSize = int(40)
 PlayerHandSize = int(5)
@@ -83,8 +84,13 @@ def LoseHand():
    PlayerCard5Strength = random.randint(4,10)
 
    print("You have Won ", WinCount,  " times and lost ",  LoseCount, " times out of ", TurnCount, " rounds.")
+   if LoseCount == 10:
+       print("You have Lost, eat shit")
+       time.sleep(5)
+       sys.exit()
 
 def WinHand():
+
    global PlayerDeckSize
    global PlayerHandSize
    global CPUDeckSize
@@ -125,7 +131,10 @@ def WinHand():
    PlayerCard4Strength = random.randint(4,10)
    PlayerCard5Strength = random.randint(4,10)
    print("You have Won ", WinCount,  " times and lost ",  LoseCount, " times out of ",  TurnCount, " rounds.")
-
+   if WinCount == 10:
+       print("You have Won, Congrats or something")
+       time.sleep(5)
+       sys.exit()
 def DrawHand():
    global PlayerDeckSize
    global PlayerHandSize
@@ -168,10 +177,6 @@ def DrawHand():
    PlayerCard5Strength = random.randint(4,10)
    print("You have Won ", WinCount,  " times and lost ", LoseCount, " times out of ", TurnCount, " rounds.")
 
-
-
-
-
 def CheckHand():
     print('Card 1 is : ' +  PlayerCard1Element, + PlayerCard1Strength)
     print('Card 2 is : ' +  PlayerCard2Element, + PlayerCard2Strength)
@@ -179,7 +184,29 @@ def CheckHand():
     print('Card 4 is : ' +  PlayerCard4Element, + PlayerCard4Strength)
     print('Card 5 is : ' +  PlayerCard5Element, + PlayerCard5Strength)
 
+def Intro():
+    print("*" *38)
+    print("*Welcome to my rip off of Card-Juitsu*")
+    print("*" *38)
+    print("")
+ RulesOrStart = input("press R to read the rules or S to Start")
+    if RulesOrStart.upper() == "R":
+     print("Casey put rules here!!!!")
+     print("press any key to Continue")
+     os.system('pause')
+    elif RulesOrStart.upper() == "S":
+    print("Starting now...")
+    time.sleep(4)
+
+def Main():
+        Intro()
+        Turn()
+        
 ViewOrPlay = input("Press H to view your hand or a number to play that card from within your hand.")
+
+
+
+
 
 if ViewOrPlay.upper() == "H":
     CheckHand()
