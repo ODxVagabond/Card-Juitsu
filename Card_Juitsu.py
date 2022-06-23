@@ -26,10 +26,10 @@ PlayerCard5Strength = random.randint(4,10)
 PlayerCard6Strength = random.randint(4,10)
 PlayerCard7Strength = random.randint(4,10)
 
-PlayerCard1 = PlayerCard1Element, + PlayerCard1Strength
+#PlayerCard1 = PlayerCard1Element, + PlayerCard1Strength
 #first hand
 ViewOrPlay = input("Press H to view your hand or a number to play that card from within your hand.")
 
 if ViewOrPlay.upper() == "H":
-    print('Card 1 is : ' + PlayerCard1)
+    print('Card 1 is : ' +  PlayerCard1Element, +"+" + PlayerCard1Strength)
 
