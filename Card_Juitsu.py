@@ -190,7 +190,7 @@ if ViewOrPlay == str("1"):
      if PlayerCard1Element == "Fire" and CPUCard1Element == "Water":
          LoseHand()
      elif PlayerCard1Element == "Fire" and CPUCard1Element =="Snow":
-        Winhand()
+        WinHand()
      elif PlayerCard1Element == "Fire" and CPUCard1Element =="Fire":
         if PlayerCard1Strength < CPUCard1Strength :
             LoseHand()
@@ -201,7 +201,7 @@ if ViewOrPlay == str("1"):
      if PlayerCard1Element == "Water" and CPUCard1Element == "Snow":
          LoseHand()
      elif PlayerCard1Element == "Water" and CPUCard1Element =="Fire":
-        Winhand()
+        WinHand()
      elif PlayerCard1Element == "Water" and CPUCard1Element =="Water":
         if PlayerCard1Strength < CPUCard1Strength :
             LoseHand()
@@ -209,3 +209,14 @@ if ViewOrPlay == str("1"):
             WinHand()
         else:
             DrawHand()
+     if PlayerCard1Element == "Snow" and CPUCard1Element == "Fire":
+         LoseHand()
+     elif PlayerCard1Element == "Snow" and CPUCard1Element =="Water":
+        WinHand()
+     elif PlayerCard1Element == "Snow" and CPUCard1Element =="Snow":
+        if PlayerCard1Strength < CPUCard1Strength :
+            LoseHand()
+        elif PlayerCard1Strength > CPUCard1Strength :
+            WinHand()
+        else:
+            DrawHand() 
